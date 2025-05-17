@@ -12,7 +12,7 @@ private:
 public:
     void push(const T& item) {
         items.push_back(item);
-        std::cout << "Added: " << item << " to queue.\n";
+        std::cout << "Добавлено: " << item << " в очередь.\n";
     }
 
     T pop() {
@@ -28,7 +28,7 @@ public:
 
     T front() const {
         if (empty()) {
-            throw std::runtime_error("Queue is empty! No front element.");
+            throw std::runtime_error("Очередь пуста!");
         }
         return items[frontIndex];
     }
@@ -41,22 +41,18 @@ public:
 
 int main() {
     Queue<std::string> stringQueue;
-    stringQueue.push("Sword");
-    stringQueue.push("Shield");
-    stringQueue.push("Potion");
-    stringQueue.display();
+    stringQueue.push("Меч");
+    stringQueue.push("щит");
+    stringQueue.push("Зелье");
 
     stringQueue.pop();
-    stringQueue.display();
 
     Queue<int> intQueue;
     intQueue.push(10);
     intQueue.push(20);
     intQueue.push(30);
-    intQueue.display();
 
     intQueue.pop();
-    intQueue.display();
 
     return 0;
 }
